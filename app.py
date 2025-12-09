@@ -8,6 +8,4 @@ def cp(color):
         "model" : "default",
 	    input : [[44,43,44],[90,83,82],"N","N","N"]
     }
-    return data
-colorpalette = cp("")
-print(colorpalette)
+    print(data)
