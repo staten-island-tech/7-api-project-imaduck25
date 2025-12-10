@@ -1,4 +1,4 @@
-""" import requests
+import requests
 import json
 
 def cs():
@@ -14,19 +14,5 @@ def cs():
     return data
 
 palette = cs()
-print(palette) """
-
-
-import requests
-
-def cp():
-    response = requests.get(f"http://colormind.io/api-access/")
-    if response.status_code != 200:
-        print("Error fetching data!")
-        return None
-    
-    data = response.json()
-    return data
-
-palette = cp()
-print(palette)
+for key, value in palette.items():
+    print(f"{key.title()}: {value}")
