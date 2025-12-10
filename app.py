@@ -1,11 +1,17 @@
 import requests
-def cp(color):
-    response = requests.get(f"http://colormind.io/api-access/{color.lower()}")
+import json
+
+def cs():
+    url = "http://colormind.io/api-access/"
+    data = {"model":"default}"}
+    response = requests.post(url, data=json.dumps(data))
+
     if response.status_code != 200:
-        print("Error fetching data!")
+        print ("Error fething palette!")
         return None
-    data = {
-        "model" : "default",
-	    input : [[44,43,44],[90,83,82],"N","N","N"]
-    }
-    print(data)
+    
+    data = response.json()
+    return data
+
+palette = cs()
+print(palette)
