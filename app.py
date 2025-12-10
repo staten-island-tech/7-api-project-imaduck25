@@ -3,7 +3,7 @@ import json
 
 def cs():
     url = "http://colormind.io/api-access/"
-    data = {"model":"default}"}
+    data = {"model":"default"}
     response = requests.post(url, data=json.dumps(data))
 
     if response.status_code != 200:
@@ -13,6 +13,6 @@ def cs():
     data = response.json()
     return data
 
-palette = cs()
+""" palette = cs()
 for key, value in palette.items():
-    print(f"{key.title()}: {value}")
+    print(f"{key.title()}: {value}") """
