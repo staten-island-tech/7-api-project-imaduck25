@@ -3,7 +3,7 @@ import requests
 def cs():
     url = "http://colormind.io/api-access/"
     data = {"model":"default"}
-    response = requests.post(url, data)
+    response = requests.get(url, data)
 
     if response.status_code != 200:
         print ("Error fething palette!")
