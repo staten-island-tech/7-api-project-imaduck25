@@ -1,17 +1,12 @@
 import requests
 
 def cs():
-    url = "http://colormind.io/api-access/"
-    data = {"model":"default"}
-    response = requests.get(url, data)
+    data = {"model": "default"}
+    response = requests.post("http://colormind.io/api/", json=data)
+    x = response.json()
+    print(x)
 
-    if response.status_code != 200:
-        print ("Error fething palette!")
-        return None
-    
-    info = response.json()
-    return info
+cs()
 
-palette = cs()
-for key, value in palette.items():
-    print(f"{key.title()}: {value}")
+""" for key, value in palette.items():
+    print(f"{key.title()}: {value}") """
