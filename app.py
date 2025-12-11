@@ -9,8 +9,8 @@ def cs():
         print ("Error fething palette!")
         return None
     
-    data = response.json()
-    return data
+    info = response.json()
+    return info
 
 palette = cs()
 for key, value in palette.items():
