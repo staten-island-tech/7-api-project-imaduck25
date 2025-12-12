@@ -5,8 +5,4 @@ def cs():
     response = requests.post("http://colormind.io/api/", json=data)
     x = response.json()
     print(x)
-
 cs()
-
-""" for key, value in palette.items():
-    print(f"{key.title()}: {value}") """
