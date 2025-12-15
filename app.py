@@ -11,11 +11,25 @@ import tkinter as tk
 
 window = tk.Tk()
 window.title("Shade Seeker")
-window.geometry("400x400")
-window.resizable(True, True)
+window.geometry("600x500")
+window.resizable(False, False)
 
 prompt = tk.Label(window, text="Which color belongs?",
-font=("Sans Serif", 14))
+font=("Serif", 20))
 prompt.pack(pady=10) 
+
+my_button = tk.Button(
+window,
+text="                      ",
+font=("Serif", 16), 
+bg="lightblue", 
+fg="black", 
+relief="raised", 
+padx=10, pady=5 
+
+)
+my_button.pack(pady=20)
+
+my_button.grid(row=1,column=2)
 
 window.mainloop()
