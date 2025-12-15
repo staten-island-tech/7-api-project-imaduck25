@@ -7,3 +7,15 @@ def cs():
     print(x)
 cs()
 
+import tkinter as tk
+
+window = tk.Tk()
+window.title("Shade Seeker")
+window.geometry("400x400")
+window.resizable(True, True)
+
+prompt = tk.Label(window, text="Which color belongs?",
+font=("Sans Serif", 14))
+prompt.pack(pady=10) 
+
+window.mainloop()
