@@ -9,25 +9,23 @@ cs()
 
 import tkinter as tk
 
-window = tk.Tk()
-window.title("Shade Seeker")
-window.geometry("600x500")
-window.resizable(False, False)
+root = tk.Tk()
+root.title("Shade Seeker")
+root.geometry("600x500")
+root.resizable(False, False)
 
-prompt = tk.Label(window, text="Which color belongs?",
+prompt = tk.Label(root, text="Which color belongs?",
 font=("Serif", 20))
-prompt.pack(pady=10) 
+prompt.grid(row=0, column=2, pady=10) 
 
-my_button = tk.Button(
-window,
-text="                      ",
-font=("Serif", 16), 
-bg="lightblue", 
-fg="black", 
-relief="raised", 
-padx=10, pady=5 
+def clicked(n):
+    print(f"You clicked button {n}")
 
-)
-my_button.pack(pady=20)
+for i in range(4):
+    tk.Button(
+        root,
+        text=f"Button {i}",
+        command=lambda i=i: clicked(i)
+    ).grid(row=10, column=i, padx=10)
 
-window.mainloop()
+root.mainloop()
