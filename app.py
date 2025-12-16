@@ -30,6 +30,4 @@ padx=10, pady=5
 )
 my_button.pack(pady=20)
 
-my_button.grid(row=1,column=2)
-
 window.mainloop()
