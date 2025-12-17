@@ -14,20 +14,20 @@ root.title("Shade Seeker")
 root.geometry("700x500")
 root.resizable(False, False)
 
-prompt = tk.Label(root, text="                      Which color belongs?",
+prompt = tk.Label(root, text="  Which color belongs?",
 font=("Serif", 20))
 prompt.grid(row=0, column=2, columnspan=6, pady=10) 
 
 frame = tk.Frame(root)
 frame.grid(row=0, column=0)
 
-def say_hello():
-    print("Hello!")
+def incorect():
+    print("wonr")
 
-def say_goodbye():
-    print("Goodbye!")
+def correct():
+    print("wrng")
 
-tk.Button(root, text="Hello", command=say_hello).grid(row=4, column=2, columnspan=3,pady=10)
-tk.Button(root, text="Goodbye", command=say_goodbye).grid(row=5, column=1, columnspan=3, pady=10)
+tk.Button(root, command=incorect).grid(row=4, column=2, columnspan=3,pady=10)
+tk.Button(root, command=correct).grid(row=5, column=1, columnspan=3, pady=10)
 
 root.mainloop()
