@@ -16,14 +16,12 @@ root.resizable(False, False)
 
 prompt = tk.Label(root, text="Which color belongs?",
 font=("Serif", 20))
-prompt.grid(row=0, column=2, pady=10) 
+prompt.grid(row=0, column=2, columnspan=6, pady=10) 
 
-def clicked(n):
-    print(f"You clicked button {n}")
-
-for i in range(4):
-    tk.Button(
-        root,
-    ).grid(row=50, column=i, padx=10)
+tk.Button(root, text="Wide Button").grid(
+    row=1,
+    column=0,
+    columnspan=2
+)
 
 root.mainloop()
