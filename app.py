@@ -25,9 +25,9 @@ def incorect():
     print("wonr")
 
 def correct():
-    print("wrng")
+    print("crct")
 
-tk.Button(root, command=incorect).grid(row=4, column=2, columnspan=3,pady=10)
-tk.Button(root, command=correct).grid(row=5, column=1, columnspan=3, pady=10)
+tk.Button(root, command=incorect).grid(row=4, column=2, columnspan=3, rowspan=3, pady=10)
+tk.Button(root, command=correct).grid(row=5, column=1, columnspan=3, rowspan=3, pady=10)
 
 root.mainloop()
