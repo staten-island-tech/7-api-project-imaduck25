@@ -24,8 +24,6 @@ def clicked(n):
 for i in range(4):
     tk.Button(
         root,
-        text=f"Button {i}",
-        command=lambda i=i: clicked(i)
     ).grid(row=50, column=i, padx=10)
 
 root.mainloop()
