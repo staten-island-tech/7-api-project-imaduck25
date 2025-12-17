@@ -22,7 +22,6 @@ frame = tk.Frame(root)
 frame.grid(row=0, column=0)
 
 for i in range(4):
-    root.columnconfigure(i, weight=1)
     tk.Button(root, text=f"B{i}").grid(row=4, column=i, columnspan=2, sticky="ew")
 
 
