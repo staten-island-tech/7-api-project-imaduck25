@@ -15,10 +15,10 @@ root.resizable(False, False)
 
 prompt = tk.Label(root, text="Which color belongs?",
 font=("Courier New", 20))
-prompt.grid(row=0, column=2, columnspan=4, pady=10) 
+prompt.grid(row=0, column=2, columnspan=4, padx=10, pady=10) 
 
 button_frame = tk.Frame(root)
-button_frame.grid(row=2,column=0, columnspan=4, pady=20)
+button_frame.grid(row=2,column=2, columnspan=4, pady=20)
 
 buttons= []
 
@@ -32,7 +32,7 @@ def next_round():
     global button_frame, buttons
     button_frame.destroy()
     button_frame = tk.Frame(root)
-    button_frame.grid(row=2, column=0, columnspan=4, rowspan = 4, pady=20)
+    button_frame.grid(row=4, column=0, columnspan=4, rowspan = 4, pady=20, padx= 50)
     for i in range(4):
             b = tk.Button(
                 button_frame,
