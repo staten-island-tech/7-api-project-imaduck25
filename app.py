@@ -14,7 +14,7 @@ root.geometry("700x700")
 root.resizable(False, False)
 
 prompt = tk.Label(root, text="Which color belongs?",
-font=("Serif", 20))
+font=("Tahoma", 20))
 prompt.grid(row=0, column=2, columnspan=4, pady=10) 
 
 button_frame = tk.Frame(root)
