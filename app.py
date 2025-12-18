@@ -21,6 +21,7 @@ button_frame = tk.Frame(root)
 button_frame.grid(row=2,column=0, columnspan=4, pady=20)
 
 def clicked(n):
+    result_label = prompt
     result_label.config(text=f"You clicked Button {n+1}")
     for btn in buttons:
         btn.config(state=tk.DISABLED)
