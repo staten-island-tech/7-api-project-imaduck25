@@ -28,6 +28,7 @@ def clicked(n):
     result_label.config(text=f"You clicked Button {n+1}")
     for btn in buttons:
         btn.config(state=tk.DISABLED)
+        button_frame.destroy()
 
 def next_round():
     global button_frame, buttons
