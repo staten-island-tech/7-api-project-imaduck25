@@ -12,6 +12,7 @@ root = tk.Tk()
 root.title("Shade Seeker")
 root.geometry("700x700")
 root.resizable(False, False)
+root.configure(bg= "lightpurple")
 
 prompt = tk.Label(root, text="Which color belongs?",
 font=("Courier New", 20))
