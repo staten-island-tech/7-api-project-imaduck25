@@ -33,7 +33,7 @@ def clicked(n):
 def next_round():
     global button_frame, buttons
     button_frame.destroy()
-    button_frame = tk.Frame(root)
+    button_frame = tk.Frame(root, bg="#D79179")
     button_frame.grid(row=4, column=0, columnspan=4, rowspan = 4, pady=20, padx= 50)
     for i in range(4):
             b = tk.Button(
