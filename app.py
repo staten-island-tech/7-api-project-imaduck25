@@ -12,14 +12,14 @@ root = tk.Tk()
 root.title("Shade Seeker")
 root.geometry("700x700")
 root.resizable(False, False)
-root.configure(bg= "lightpurple")
+root.configure(bg= "#D79179")
 
 prompt = tk.Label(root, text="Which color belongs?",
 font=("Courier New", 20))
-prompt.grid(row=0, column=2, columnspan=4, padx=10, pady=10) 
+prompt.grid(row=0, column=2, padx=10, pady=10) 
 
 button_frame = tk.Frame(root)
-button_frame.grid(row=2,column=2, columnspan=4, pady=20)
+button_frame.grid(row=2,column=2, pady=20)
 
 buttons= []
 
@@ -46,6 +46,7 @@ def next_round():
 next_round()
 
 next_btn = tk.Button(root, text="Next Round", command=next_round)
-next_btn.grid(row=8, column=0, columnspan=4, rowspan = 4, pady=20)
+next_btn.grid(row=8, column=0, columnspan=4, rowspan = 4, pady=20, 
+              bg = "#A05F62")
 
 root.mainloop()
