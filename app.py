@@ -45,8 +45,7 @@ def next_round():
             buttons.append(b)
 next_round()
 
-next_btn = tk.Button(root, text="Next Round", command=next_round)
-next_btn.grid(row=8, column=0, columnspan=4, rowspan = 4, pady=20, 
-              bg = "#A05F62")
+next_btn = tk.Button(root, text="Next Round", command=next_round, bg = "#A05F62", fg= "#FAF9FA")
+next_btn.grid(row=8, column=0, columnspan=4, rowspan = 4, pady=20)
 
 root.mainloop()
