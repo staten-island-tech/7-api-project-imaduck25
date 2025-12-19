@@ -10,12 +10,12 @@ cs()
 
 root = tk.Tk()
 root.title("Shade Seeker")
-root.geometry("700x700")
+root.geometry("600x400")
 root.resizable(False, False)
 root.configure(bg= "#D79179")
 
 prompt = tk.Label(root, text="Which color belongs?",
-font=("Courier New", 20))
+font=("Courier New", 20), bg="#D79179", fg="#594654")
 prompt.grid(row=0, column=2, padx=10, pady=10) 
 
 button_frame = tk.Frame(root)
@@ -25,7 +25,7 @@ buttons= []
 
 def clicked(n):
     result_label = prompt
-    result_label.config(text=f"You clicked Button {n+1}")
+    result_label.config(text=f"You clicked Button {n+1} ", font=("Courier New", 20))
     for btn in buttons:
         btn.config(state=tk.DISABLED)
         button_frame.destroy()
