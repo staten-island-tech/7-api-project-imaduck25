@@ -18,7 +18,7 @@ prompt = tk.Label(root, text="Which color belongs?",
 font=("Courier New", 20), bg="#D79179", fg="#594654")
 prompt.grid(row=0, column=2, padx=10, pady=10) 
 
-button_frame = tk.Frame(root)
+button_frame = tk.Frame(root, bg="#D79179", fg="#859A9D")
 button_frame.grid(row=2,column=2, pady=20)
 
 buttons= []
