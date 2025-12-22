@@ -22,7 +22,7 @@ button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=2,column=2, pady=20)
 
 buttons= []
-answers = ["3", "4", "5", "6"]
+answer = ["3", "4", "5", "6"]
 
 def check(answer):
     result_label = prompt
@@ -34,7 +34,7 @@ def check(answer):
         btn.config(state=tk.DISABLED)
         button_frame.destroy()
 
-correct_answer = "4"
+correct_answer = "3"
 
 def next_round():
     global button_frame, buttons
