@@ -44,7 +44,7 @@ def next_round():
             btn = tk.Button(
             button_frame,
             text=i,
-            width=8,
+            width=10,
             command=lambda a=i: check(a)
             )
             btn.grid(row=0, column=i, padx=10)
