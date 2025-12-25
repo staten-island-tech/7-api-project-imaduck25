@@ -26,6 +26,18 @@ font=("Courier New", 7, "bold"),
 bg="#D79179")
 prompt.grid(row=3, column=2, padx=10, pady=10)
 
+palette_frame = tk.Frame(root, bg="#D79179")
+palette_frame.grid(row=4,column=2, pady=20)
+
+colors = ["#D79179", "#594654", "#A05F62","#859A9D"]
+for i, c in enumerate(colors):
+     sq = tk.Label(
+          palette_frame,
+          bg=c,
+          width=10,
+          height=5
+     )
+
 button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=2, pady=20)
 
