@@ -21,22 +21,23 @@ fg="#594654")
 prompt.grid(row=0, column=2, padx=10, pady=10)
 
 palette = tk.Label(root,
-text="Palettee:",
-font=("Courier New", 7, "bold"),
-bg="#D79179")
-prompt.grid(row=3, column=2, padx=10, pady=10)
+    text="Palettee:",
+    font=("Courier New", 12, "bold"),
+    bg="#D79179")
+palette.grid(row=1, column=2, padx=10, pady=10)
 
 palette_frame = tk.Frame(root, bg="#D79179")
 palette_frame.grid(row=4,column=2, pady=20)
 
 colors = ["#D79179", "#594654", "#A05F62","#859A9D"]
-for i, c in enumerate(colors):
+for i, color in enumerate(colors):
      sq = tk.Label(
           palette_frame,
-          bg=c,
+          bg=color,
           width=10,
           height=5
      )
+sq.grid(row=2, column=i, padx=5)
 
 button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=2, pady=20)
@@ -56,7 +57,7 @@ def next_round():
     global button_frame, buttons
     button_frame.destroy()
     button_frame = tk.Frame(root, bg="#D79179")
-    button_frame.grid(row=4, column=0, columnspan=4, rowspan = 4, pady=20, padx= 50)
+    button_frame.grid(row=7, column=0, columnspan=4, rowspan = 4, pady=20, padx= 50)
     buttons = []
     for i in range(4):
             btn = tk.Button(
@@ -76,6 +77,6 @@ text="Next Round",
 command=next_round, 
 bg = "#859A9D", 
 fg= "#FAF9FA")
-next_btn.grid(row=8, column=0, columnspan=4, rowspan = 4, pady=20)
+next_btn.grid(row=10, column=0, columnspan=4, rowspan = 4, pady=20)
 
 root.mainloop()
