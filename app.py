@@ -18,10 +18,16 @@ prompt = tk.Label(root, text="Which color belongs?",
 font=("Courier New", 20), 
 bg="#D79179", 
 fg="#594654")
-prompt.grid(row=0, column=2, padx=10, pady=10) 
+prompt.grid(row=0, column=2, padx=10, pady=10)
+
+palette = tk.Label(root,
+text="Palettee:",
+font=("Courier New", 7, "bold"),
+bg="#D79179")
+prompt.grid(row=3, column=2, padx=10, pady=10)
 
 button_frame = tk.Frame(root, bg="#D79179")
-button_frame.grid(row=2,column=2, pady=20)
+button_frame.grid(row=5,column=2, pady=20)
 
 def check(answer):
     result_label = prompt
