@@ -11,7 +11,7 @@ cs()
 root = tk.Tk()
 root.title("Shade Seeker")
 root.geometry("600x400")
-root.resizable(False, False)
+""" root.resizable(False, False) """
 root.configure(bg= "#D79179")
 
 prompt = tk.Label(root, text="Which color belongs?",
@@ -77,6 +77,6 @@ text="Next Round",
 command=next_round, 
 bg = "#859A9D", 
 fg= "#FAF9FA")
-next_btn.grid(row=10, column=0, columnspan=4, rowspan = 4, pady=20)
+next_btn.grid(row=9, column=0, columnspan=4, rowspan = 4, pady=20)
 
 root.mainloop()
