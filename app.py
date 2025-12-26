@@ -1,5 +1,6 @@
 import requests
 import tkinter as tk
+import random
 
 def cs():
     data = {"model": "default"}
@@ -35,6 +36,8 @@ palette_frame = tk.Frame(root)
 palette_frame.grid(row=2,column=1)
 
 colors = ["#D79179", "#594654", "#A05F62","#859A9D"]
+squares = []
+
 for i, color in enumerate(colors):
      sq = tk.Label(
           palette_frame,
@@ -43,6 +46,8 @@ for i, color in enumerate(colors):
           height=5
      )
      sq.grid(row=0, column=i, padx=5)
+     squares.append(sq)
+random.choice(squares).grid_remove()
 
 button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=1, pady=20)
