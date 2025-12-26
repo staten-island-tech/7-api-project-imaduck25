@@ -61,7 +61,7 @@ def check(answer):
         btn.config(state=tk.DISABLED)
 
 def next_round():
-    global button_frame, buttons, correct_answer
+    global button_frame, buttons, correct_answer, palette_frame, squares
     squares.clear()
     palette_frame.destroy()
     palette_frame = tk.Frame(root)
@@ -87,7 +87,7 @@ def next_round():
             button_frame,
             bg=colors[i],
             width=10,
-            height=2,
+            height=5,
             fg="#FAF9FA",
             font=("Courier New", 10, "bold"),
             command=lambda a=colors[i]: check(a)
