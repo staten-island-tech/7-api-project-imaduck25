@@ -46,8 +46,10 @@ for i, color in enumerate(colors):
           height=5
      )
      sq.grid(row=0, column=i, padx=5)
-     squares.append(sq)
-random.choice(squares).grid_remove()
+     squares.append((sq, color))
+hidden_square, hidden_color = random.choice(squares)
+hidden_square.grid_remove()
+correct_answer = hidden_color
 
 button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=1, pady=20)
@@ -55,13 +57,11 @@ button_frame.grid(row=5,column=1, pady=20)
 def check(answer):
     result_label = prompt
     if answer == correct_answer:
-        result_label.config(text="Correct!")
+        result_label.config(text="Correct!", fg= "#A05F62")
     else:
-        result_label.config(text="Wrong!")
+        result_label.config(text="Wrong!", fg= "#A05F62")
     for btn in buttons:
         btn.config(state=tk.DISABLED)
-
-correct_answer = "2"
 
 def next_round():
     global button_frame, buttons
@@ -72,11 +72,12 @@ def next_round():
     for i in range(4):
             btn = tk.Button(
             button_frame,
-            text=i,
+            bg=colors[i],
             width=10,
-            fg="#A05F62",
+            height=2,
+            fg="#FAF9FA",
             font=("Courier New", 10, "bold"),
-            command=lambda a=i: check(a)
+            command=lambda a=colors[i]: check(a)
             )
             btn.grid(row=0, column=i, padx=10)
             buttons.append(btn)
