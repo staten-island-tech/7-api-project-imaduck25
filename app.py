@@ -82,6 +82,6 @@ text="Next Round",
 command=next_round, 
 bg = "#859A9D", 
 fg= "#FAF9FA")
-next_btn.grid(row=9, column=0, columnspan=4, rowspan = 4, pady=20)
+next_btn.grid(row=9, column=1, pady=20)
 
 root.mainloop()
