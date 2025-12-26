@@ -63,6 +63,9 @@ def check(answer):
 def next_round():
     global button_frame, buttons, correct_answer
     squares.clear()
+    palette_frame.destroy()
+    palette_frame = tk.Frame(root)
+    palette_frame.grid(row=2, column=1)
     for i, color in enumerate(colors):
      sq = tk.Label(
           palette_frame,
