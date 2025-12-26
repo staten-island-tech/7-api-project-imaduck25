@@ -12,7 +12,7 @@ cs()
 root = tk.Tk()
 root.title("Shade Seeker")
 root.geometry("600x400")
-""" root.resizable(False, False) """
+root.resizable(False, False)
 root.configure(bg= "#D79179")
 
 root.grid_columnconfigure(0, weight=1)
@@ -62,6 +62,7 @@ def check(answer):
 
 def next_round():
     global button_frame, buttons, correct_answer, palette_frame, squares
+    prompt.config(text="Which color belongs?", fg="#594654")
     squares.clear()
     palette_frame.destroy()
     palette_frame = tk.Frame(root)
