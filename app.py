@@ -47,9 +47,6 @@ for i, color in enumerate(colors):
      )
      sq.grid(row=0, column=i, padx=5)
      squares.append((sq, color))
-hidden_square, hidden_color = random.choice(squares)
-hidden_square.grid_remove()
-correct_answer = hidden_color
 
 button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=1, pady=20)
@@ -64,7 +61,20 @@ def check(answer):
         btn.config(state=tk.DISABLED)
 
 def next_round():
-    global button_frame, buttons
+    global button_frame, buttons, correct_answer
+    squares.clear()
+    for i, color in enumerate(colors):
+     sq = tk.Label(
+          palette_frame,
+          bg=color,
+          width=10,
+          height=5
+     )
+     sq.grid(row=0, column=i, padx=5)
+     squares.append((sq, color))
+    hidden_square, hidden_color = random.choice(squares)
+    hidden_square.grid_remove()
+    correct_answer = hidden_color
     button_frame.destroy()
     button_frame = tk.Frame(root, bg="#D79179")
     button_frame.grid(row=3, column=1,pady=20)
