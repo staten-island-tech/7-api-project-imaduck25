@@ -35,7 +35,7 @@ palette.grid(row=1, column=1, padx=10, pady=10)
 palette_frame = tk.Frame(root)
 palette_frame.grid(row=2,column=1)
 
-colors = ["#D79179", "#594654", "#A05F62","#859A9D"]
+colors = [ "#FAF9FA", "#594654", "#A05F62","#859A9D"]
 squares = []
 
 for i, color in enumerate(colors):
@@ -60,9 +60,26 @@ def check(answer):
     for btn in buttons:
         btn.config(state=tk.DISABLED)
 
+def rgbtohex(r, g,b):
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+def gp():
+    data = {"model": "default"}
+    response = requests.post("http://colormind.io/api/", json=data)
+    x = response.json()
+    palette = x["result"]
+    hex_colors = []
+    for r,g,b in palette:
+        hex_colors.append(rgbtohex(r,g,b))
+    return hex_colors
+gp()
+
 def next_round():
     global button_frame, buttons, correct_answer, palette_frame, squares
     prompt.config(text="Which color belongs?", fg="#594654")
+    colors=gp()
+    palette_colors = colors[:4]
+    answer_colors = colors
     squares.clear()
     palette_frame.destroy()
     palette_frame = tk.Frame(root)
