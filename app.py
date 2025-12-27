@@ -100,15 +100,15 @@ def next_round():
     button_frame = tk.Frame(root, bg="#D79179")
     button_frame.grid(row=3, column=1,pady=20)
     buttons = []
-    for i in range(4):
+    for i, color in enumerate(answer_colors):
             btn = tk.Button(
             button_frame,
-            bg=colors[i],
+            bg=color,
             width=10,
             height=5,
             fg="#FAF9FA",
             font=("Courier New", 10, "bold"),
-            command=lambda a=colors[i]: check(a)
+            command=lambda a=colors: check(a)
             )
             btn.grid(row=0, column=i, padx=10)
             buttons.append(btn)
