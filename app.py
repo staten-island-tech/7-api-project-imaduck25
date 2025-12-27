@@ -76,14 +76,18 @@ gp()
 
 def next_round():
     global button_frame, buttons, correct_answer, palette_frame, squares
+
     prompt.config(text="Which color belongs?", fg="#594654")
+
     colors=gp()
-    palette_colors = colors[:4]
-    answer_colors = colors
+    palette_colors = random.sample(colors, 4)
+    answer_colors = palette_colors.copy()
+
     squares.clear()
     palette_frame.destroy()
     palette_frame = tk.Frame(root)
     palette_frame.grid(row=2, column=1)
+
     for i, color in enumerate(palette_colors):
      sq = tk.Label(
           palette_frame,
@@ -93,12 +97,15 @@ def next_round():
      )
      sq.grid(row=0, column=i, padx=5)
      squares.append((sq, color))
+
     hidden_square, hidden_color = random.choice(squares)
     hidden_square.grid_remove()
     correct_answer = hidden_color
+
     button_frame.destroy()
     button_frame = tk.Frame(root, bg="#D79179")
     button_frame.grid(row=3, column=1,pady=20)
+    
     buttons = []
     for i, color in enumerate(answer_colors):
             btn = tk.Button(
