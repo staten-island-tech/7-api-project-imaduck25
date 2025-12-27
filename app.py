@@ -84,7 +84,7 @@ def next_round():
     palette_frame.destroy()
     palette_frame = tk.Frame(root)
     palette_frame.grid(row=2, column=1)
-    for i, color in enumerate(colors):
+    for i, color in enumerate(palette_colors):
      sq = tk.Label(
           palette_frame,
           bg=color,
@@ -108,7 +108,7 @@ def next_round():
             height=5,
             fg="#FAF9FA",
             font=("Courier New", 10, "bold"),
-            command=lambda a=colors: check(a)
+            command=lambda a=color:check(a)
             )
             btn.grid(row=0, column=i, padx=10)
             buttons.append(btn)
