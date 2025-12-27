@@ -11,7 +11,7 @@ cs()
 
 root = tk.Tk()
 root.title("Shade Seeker")
-root.geometry("600x400")
+root.geometry("800x400")
 root.resizable(False, False)
 root.configure(bg= "#D79179")
 
@@ -21,7 +21,7 @@ root.grid_columnconfigure(2, weight=1)
 
 prompt = tk.Label(root, text="Which color belongs?",
 font=("Courier New", 20), 
-bg="#D79179", 
+bg="#D79179",
 fg="#594654")
 prompt.grid(row=0, column=1, padx=10, pady=10)
 
@@ -31,8 +31,8 @@ palette = tk.Label(root,
     bg="#D79179",
     fg="#594654")
 palette.grid(row=1, column=1, padx=10, pady=10)
-
-palette_frame = tk.Frame(root)
+ 
+palette_frame = tk.Frame(root, bg="#D79179")
 palette_frame.grid(row=2,column=1)
 
 colors = [ "#FAF9FA", "#594654", "#A05F62","#859A9D"]
@@ -79,13 +79,20 @@ def next_round():
 
     prompt.config(text="Which color belongs?", fg="#594654")
 
-    colors=gp()
-    palette_colors = random.sample(colors, 4)
-    answer_colors = palette_colors.copy()
+    pa= gp()
+    palette_colors = pa.copy(
+    )
+    hidden_color = random.choice(palette_colors)
+    vcolors = [c for c in palette_colors if c !=hidden_color]
+    pb=gp()
+    wrong_choices=random.sample(pb,3)
+
+    pb=gp()
+    wrong_choices=random.sample(pb,3)
 
     squares.clear()
     palette_frame.destroy()
-    palette_frame = tk.Frame(root)
+    palette_frame = tk.Frame(root, bg="#D79179")
     palette_frame.grid(row=2, column=1)
 
     for i, color in enumerate(palette_colors):
@@ -102,10 +109,13 @@ def next_round():
     hidden_square.grid_remove()
     correct_answer = hidden_color
 
+    answer_colors = [correct_answer]+ wrong_choices
+    random.shuffle(answer_colors)
+
     button_frame.destroy()
     button_frame = tk.Frame(root, bg="#D79179")
     button_frame.grid(row=3, column=1,pady=20)
-    
+
     buttons = []
     for i, color in enumerate(answer_colors):
             btn = tk.Button(
