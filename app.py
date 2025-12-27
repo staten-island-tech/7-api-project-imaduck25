@@ -57,6 +57,7 @@ def check(answer):
         result_label.config(text="Correct!", fg= "#A05F62")
     else:
         result_label.config(text="Wrong!", fg= "#A05F62")
+        hidden_square.grid()
     for btn in buttons:
         btn.config(state=tk.DISABLED)
 
@@ -105,6 +106,7 @@ def next_round():
      sq.grid(row=0, column=i, padx=5)
      squares.append((sq, color))
 
+    global hidden_square
     hidden_square, hidden_color = random.choice(squares)
     hidden_square.grid_remove()
     correct_answer = hidden_color
