@@ -2,6 +2,8 @@ import requests
 import tkinter as tk
 import random
 
+score=0
+
 def cs():
     data = {"model": "default"}
     response = requests.post("http://colormind.io/api/", json=data)
@@ -11,7 +13,7 @@ cs()
 
 root = tk.Tk()
 root.title("Shade Seeker")
-root.geometry("800x400")
+root.geometry("600x400")
 root.resizable(False, False)
 root.configure(bg= "#D79179")
 
@@ -24,6 +26,15 @@ font=("Courier New", 20),
 bg="#D79179",
 fg="#594654")
 prompt.grid(row=0, column=1, padx=10, pady=10)
+
+score_label = tk.Label(
+    root,
+    text= "SCORE:0 ",
+    font=("Courier New", 14),
+    bg="#D79179",
+    fg= "#A05F62"
+    )
+score_label.grid(row=0, column=2)
 
 palette = tk.Label(root,
     text="Palettee:",
@@ -52,9 +63,13 @@ button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=1, pady=20)
 
 def check(answer):
+    global score
+
     result_label = prompt
     if answer == correct_answer:
         result_label.config(text="Correct!", fg= "#A05F62")
+        score+=1
+        score_label.config(text=f"SCORE:{score}", fg= "#A05F62")
     else:
         result_label.config(text="Wrong!", fg= "#A05F62")
         hidden_square.grid()
@@ -80,14 +95,7 @@ def next_round():
 
     prompt.config(text="Which color belongs?", fg="#594654")
 
-    pa= gp()
-    palette_colors = pa.copy(
-    )
-    hidden_color = random.choice(palette_colors)
-    vcolors = [c for c in palette_colors if c !=hidden_color]
-    pb=gp()
-    wrong_choices=random.sample(pb,3)
-
+    palette_colors = gp()
     pb=gp()
     wrong_choices=random.sample(pb,3)
 
