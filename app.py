@@ -63,7 +63,7 @@ button_frame = tk.Frame(root, bg="#D79179")
 button_frame.grid(row=5,column=1, pady=20)
 
 def check(answer):
-    global score
+    """     global score """
 
     result_label = prompt
     if answer == correct_answer:
