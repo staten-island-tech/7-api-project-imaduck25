@@ -170,7 +170,7 @@ next_btn = tk.Button(root,
 text="Next Round", 
 command=next_round, #when next round button is clicked, this function is ran
 bg = "#859A9D", 
-fg= "#FAF9FA)
+fg= "#FAF9FA")
 next_btn.grid(row=9, column=1, pady=20)
 
 root.mainloop()
