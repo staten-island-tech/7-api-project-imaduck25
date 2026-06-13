@@ -71,7 +71,7 @@ button_frame.grid(row=5,column=1, pady=20)
 
 def check(answer):
     global score
-    #global is when instead of creating a local variable in a function, you use a variable outside the function; in ths case, we arent making a new score variable that only exists in the function, we are using the score variable outside the functipm
+    #global is when instead of creating a local variable in a function, you use a variable outside the function; in ts case, we arent making a new score variable that only exists in the function, we are using the score variable outside the functipm
 
     result_label = prompt
     if answer == correct_answer:
@@ -170,7 +170,7 @@ next_btn = tk.Button(root,
 text="Next Round", 
 command=next_round, #when next round button is clicked, this function is ran
 bg = "#859A9D", 
-fg= "#FAF9FA")
+fg= "#FAF9FA)
 next_btn.grid(row=9, column=1, pady=20)
 
 root.mainloop()
